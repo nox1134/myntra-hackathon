@@ -120,6 +120,16 @@ textarea.form-input {
   height: 96px;
 }
 
+select.form-input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  color: #333;
+}
+
 .add-link-button {
   display: inline-block;
   padding: 8px 12px;
