@@ -109,14 +109,33 @@ body {
 }
 
 .form-input {
-  width: 100%;
+  width: calc(100% - 32px); /* Adjusted width to account for padding */
   padding: 8px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 textarea.form-input {
   height: 96px;
+}
+
+.add-link-button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.add-link-button:hover {
+  background-color: #0056b3;
 }
 
 /* App styles */
