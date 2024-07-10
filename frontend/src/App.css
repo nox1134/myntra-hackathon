@@ -97,10 +97,20 @@ body {
   width: 100%;
 }
 
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .form-input {
   width: 100%;
   padding: 8px 16px;
-  margin-bottom: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
