@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../Create/Header'
 import MainSection from '../Create/MainSection'
-import '../../../App.css';
+import '../../../Create-muse.css';
 
 
 const Landing = () => {

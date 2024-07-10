@@ -1,4 +1,4 @@
-import '../../../App.css';
+import '../../../Create-muse.css';
 
 const Header = () => {
     return (
