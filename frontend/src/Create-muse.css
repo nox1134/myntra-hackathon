@@ -44,15 +44,17 @@ body {
   padding: 8px 16px;
   text-decoration: none;
   color: #333;
+  border-radius: 4px;
 }
 
 .header-link.active {
-  font-weight: bold;
-  color: #007bff; /* Adjust the color as needed */
+  background-color: #007bff; /* Adjust the background color as needed */
+  color: white; /* Ensure text is readable on the background color */
 }
 
 .header-link:hover {
-  color: #0056b3; /* Adjust the hover color as needed */
+  background-color: #0056b3; /* Adjust the hover background color as needed */
+  color: white; /* Ensure text is readable on the hover background color */
 }
 
 /* Main section styles */
