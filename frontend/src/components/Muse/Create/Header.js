@@ -19,10 +19,15 @@ const Header = () => {
             Explore
           </Link>
           <Link
-            to="/"
+            to="/create-muse"
             className={`header-link ${
-              location.pathname === "/" ? "active" : ""
+              location.pathname === "/create-muse" ? "active" : ""
             }`}
+            onClick={(e) => {
+              if (location.pathname === "/create-muse") {
+                e.preventDefault(); // Prevent reloading if already on the page
+              }
+            }}
           >
             Create Muse
           </Link>
