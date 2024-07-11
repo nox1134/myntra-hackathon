@@ -34,17 +34,18 @@ code {
 
 .left-icon {
   cursor: pointer;
-  font-size: 1.5em; /* Increase size of the arrow */
+  font-size: 1.4em; /* Increase size of the arrow */
 }
 
 .buttons {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
+  margin-right: 12px;
 }
 
 .unliked, .liked, .share-icon {
-  font-size: 1.5em; /* Increase size of the icons */
+  font-size: 1.4em; /* Increase size of the icons */
 }
 
 .unliked {
@@ -59,6 +60,7 @@ code {
 .share-icon {
   color: #000;
   transition: color 0.3s;
+  font-weight: lighter; /* Adjust font-weight to make it less bold */
 }
 
 .share-icon:hover {
