@@ -45,6 +45,7 @@ body {
   text-decoration: none;
   color: #333;
   border-radius: 4px;
+  margin-right: 8px; /* Add margin between the buttons */
 }
 
 .header-link.active {
