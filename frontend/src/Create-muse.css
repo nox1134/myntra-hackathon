@@ -45,17 +45,35 @@ body {
   text-decoration: none;
   color: #333;
   border-radius: 4px;
-  margin-right: 8px; /* Add margin between the buttons */
+  margin-right: 16px; /* Add margin between the buttons */
+  font-weight: normal;
+  position: relative;
+  transition: transform 0.2s, font-weight 0.2s;
 }
 
 .header-link.active {
-  background-color: #007bff; /* Adjust the background color as needed */
-  color: white; /* Ensure text is readable on the background color */
+  font-weight: bold;
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  bottom: -18.5px; /* Adjust the position of the line */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff; /* Color of the underline */
+  transition: width 0.2s, left 0.2s; /* Added transition for left property */
+}
+
+.header-link:hover::after {
+  width: calc(100% - 32px); /* Adjusted width to cover the length of the text, considering padding */
+  left: 16px; /* Adjusted left position to align with text padding */
 }
 
 .header-link:hover {
-  background-color: #0056b3; /* Adjust the hover background color as needed */
-  color: white; /* Ensure text is readable on the hover background color */
+  transform: scale(1.05);
+  font-weight: bold;
 }
 
 /* Main section styles */
