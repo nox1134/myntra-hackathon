@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../../../Create-muse.css';
+
 const MainSection = () => {
   const [links, setLinks] = useState(['']);
   const [visibility, setVisibility] = useState('private');
@@ -69,4 +71,5 @@ const MainSection = () => {
   );
 };
 
-  export default MainSection;
+export default MainSection;
+

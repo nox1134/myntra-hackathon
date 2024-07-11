@@ -28,6 +28,29 @@ body {
   margin-right: 16px;
 }
 
+.header-left nav {
+  display: flex;
+  gap: 16px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-link:hover {
+  background-color: #f0f0f0;
+}
+
+.header-link.active {
+  color: #fff;
+  background-color: #007bff;
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -109,7 +132,7 @@ body {
 }
 
 .form-input {
-  width: calc(100% - 32px); /* Adjusted width to account for padding */
+  width: calc(100% - 32px);
   padding: 8px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
