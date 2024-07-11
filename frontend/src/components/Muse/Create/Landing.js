@@ -5,7 +5,7 @@ import "../../../Create-muse.css";
 
 const Landing = () => {
   return (
-    <div>
+    <div className="view-landing">
       <Header />
       <main className="main-content">
         <MainSection />
