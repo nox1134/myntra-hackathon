@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from '../Create/Header';
 
 const Explore = () => {
   return (
     <div>
-      <h1>Explore Page</h1>
+      <Header />
     </div>
   );
 };
