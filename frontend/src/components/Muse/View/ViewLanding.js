@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Create/Header';
+import Header from './Header';
 import TitleSection from './Title';
 import ImageGallery from './ImageTile';
 import ShopTheLook from './ShopTheLook';
