@@ -1,10 +1,15 @@
 import React from 'react';
 import Header from '../Create/Header';
+import Search from './Search';
+import '../../../index.css'
+import Allcards from './Allcards';
 
 const Explore = () => {
   return (
     <div>
       <Header />
+      <Search />
+      <Allcards />
     </div>
   );
 };
