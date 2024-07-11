@@ -5,6 +5,10 @@ const MainSection = () => {
   const [links, setLinks] = useState(['']);
   const [visibility, setVisibility] = useState('private');
 
+  const handleVisibilityChange = (e) => {
+    setVisibility(e.target.value);
+  };
+
   const addLinkInput = () => {
     setLinks([...links, '']);
   };
@@ -15,8 +19,10 @@ const MainSection = () => {
     setLinks(newLinks);
   };
 
-  const handleVisibilityChange = (e) => {
-    setVisibility(e.target.value);
+  const removeLinkInput = (index) => {
+    const newLinks = [...links];
+    newLinks.splice(index, 1);
+    setLinks(newLinks);
   };
 
   return (
@@ -43,14 +49,23 @@ const MainSection = () => {
           <div className="form-group">
             <label className="form-label" htmlFor="link">Links</label>
             {links.map((link, index) => (
-              <input
-                key={index}
-                type="text"
-                placeholder="Add a link"
-                className="form-input"
-                value={link}
-                onChange={(e) => handleLinkChange(index, e.target.value)}
-              />
+              <div key={index} className="link-input-container">
+                <input
+                  type="text"
+                  placeholder="Add a link"
+                  className="form-input link-input"
+                  value={link}
+                  onChange={(e) => handleLinkChange(index, e.target.value)}
+                />
+                {index > 0 && (
+                  <button
+                    className="remove-link-button"
+                    onClick={() => removeLinkInput(index)}
+                  >
+                    X
+                  </button>
+                )}
+              </div>
             ))}
             <button className="add-link-button" onClick={addLinkInput}>+</button>
           </div>
@@ -60,7 +75,7 @@ const MainSection = () => {
           </div>
           <div className="form-group">
             <label className="form-label" htmlFor="visibility">Visibility</label>
-            <select id="visibility" className="form-input" value={visibility} onChange={handleVisibilityChange}>
+            <select id="visibility" className="form-input">
               <option value="private">Private</option>
               <option value="public">Public</option>
             </select>
@@ -72,4 +87,3 @@ const MainSection = () => {
 };
 
 export default MainSection;
-
