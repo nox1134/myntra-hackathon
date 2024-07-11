@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../Create/Header';
 import Search from './Search';
-import '../../../index.css'
+import '../../../index.css';
 import Allcards from './Allcards';
 
 const Explore = () => {
   return (
-    <div>
+    <div className="view-landing">
       <Header />
       <Search />
       <Allcards />
