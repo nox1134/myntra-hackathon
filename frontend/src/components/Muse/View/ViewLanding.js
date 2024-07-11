@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from './Header';
 import TitleSection from './Title';
-import ImageGallery from './ImageTile';
+import ImageTile from './ImageTile';
 import ShopTheLook from './ShopTheLook';
-import '../../../index.css'
+import '../../../index.css';
 
 const ViewLanding = () => {
   return (
-    <div className="bg-background text-foreground p-4">
+    <div className="view-landing bg-background text-foreground">
       <Header />
       <TitleSection />
-      <ImageGallery />
+      <ImageTile />
       <ShopTheLook />
     </div>
   );

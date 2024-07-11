@@ -2,9 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,4 +15,57 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure the header stays on top */
+}
+
+.left-icon {
+  cursor: pointer;
+  font-size: 1.5em; /* Increase size of the arrow */
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.unliked, .liked, .share-icon {
+  font-size: 1.5em; /* Increase size of the icons */
+}
+
+.unliked {
+  color: #000;
+  border: 2px solid transparent;
+}
+
+.liked {
+  color: red;
+}
+
+.share-icon {
+  color: #000;
+  transition: color 0.3s;
+}
+
+.share-icon:hover {
+  color: #1da1f2;
+}
+
+/* Additional style for ViewLanding */
+.view-landing {
+  padding-top: 70px; /* Adjust this value to match the height of your header */
 }
