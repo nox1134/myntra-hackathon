@@ -1,6 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = ({ onNextClick, onPreviousClick, progress, isLastQuestion, isFirstQuestion }) => {
+    const navigate=useNavigate();
+    const handleClick = () => {
+        navigate('/quiz-results');
+    };
+    
   return (
     <div>
       <div className="flex flex-col gap-3 p-4">
@@ -21,7 +27,8 @@ const Footer = ({ onNextClick, onPreviousClick, progress, isLastQuestion, isFirs
           </button>
           {isLastQuestion ? (
             <button
-              className="bg-[#e71ea4] text-white py-2 px-4 rounded-md transition-transform duration-300 transform hover:scale-105"
+              className="bg-[#e71ea4] text-white py-2 px-4 rounded-md transition-transform duration-300 transform hover:scale-105" 
+              onClick={handleClick}
             >
               Submit
             </button>
