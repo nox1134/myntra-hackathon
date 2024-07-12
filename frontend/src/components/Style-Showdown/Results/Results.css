@@ -76,7 +76,8 @@ body {
     min-width: 300px; /* Adjust width as needed */
     min-height: 300px;
     margin-left: 20px;
-  }
+    margin-right: 20px;
+ }
 
 .hero-section {
     margin-top: -20px; /* Adjust as needed */
