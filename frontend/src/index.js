@@ -26,6 +26,8 @@ AOS.init({
         <Route path="/quiz-results" element={<Results />} />
         <Route path="/quiz-page" element={<QuizStarter />} />
         <Route path="/quiz-landing" element={<QuizLanding />} />
+        <Route path="*" element={<QuizLanding />} />
+
 
 
 
