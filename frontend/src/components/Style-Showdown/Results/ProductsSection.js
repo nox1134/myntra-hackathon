@@ -1,4 +1,3 @@
-// ShopTheLook.js
 import React from 'react';
 import './Results.css'; // Ensure you import the styles
 
@@ -11,9 +10,9 @@ const products = [
   { id: 6, title: 'Wrap Basic Jumpsuit with Belt', brand: 'MANGO', price: 'Rs. 4053', imageUrl: '/assets/ViewMuse/Jumpsuit.png' },
 ];
 
-const ShopTheLook = () => {
+const ProductsSection = () => {
   return (
-    <div className="shop-the-look">
+    <div className="shop-the-look" data-aos="fade-up" data-aos-duration="1500">
       <h2 className="title">Products for your style</h2>
       <div className="products-container">
         <div className="product-list">
@@ -35,4 +34,4 @@ const ShopTheLook = () => {
   );
 };
 
-export default ShopTheLook;
+export default ProductsSection;
