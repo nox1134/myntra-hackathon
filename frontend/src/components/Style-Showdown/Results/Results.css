@@ -74,4 +74,19 @@ body {
   .style-icon-image {
     background-image: url("https://cdn.usegalileo.ai/sdxl10/97275f0f-708a-481b-8d0c-3216d21c7848.png");
     min-width: 300px; /* Adjust width as needed */
+    min-height: 300px;
+    margin-left: 20px;
+  }
+
+.hero-section {
+    margin-top: -20px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #fcf8fa;
+    /* Additional styles for hero section */
+  }
+  
+  .hero-section .bg-cover {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://cdn.usegalileo.ai/sdxl10/7fa0915c-96be-4383-8663-ca510b97a06e.png");
+    min-height: 450px;
+    min-width: 250px /* Adjust the minimum height */
   }

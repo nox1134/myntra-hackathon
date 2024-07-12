@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../Results/Header';
 import HeroSection from '../Results/HeroSection';
-import Description from '../Results/Description';
 import StyleIcon from '../Results/StyleIcon';
 import ShopButton from '../Results/ShopButton';
 import ProductsSection from '../Results/ProductsSection';
@@ -13,7 +12,6 @@ function Results() {
       <div>
         <Header />
         <HeroSection />
-        <Description />
         <StyleIcon />
         <ProductsSection />
       </div>
