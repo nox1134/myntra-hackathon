@@ -3,6 +3,7 @@ import React from 'react';
 function ProductsSection() {
   return (
     <>
+      <h2 className="text-[#1b0e17] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Products for your style</h2>
       <div className="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex items-stretch p-4 gap-3">
           <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">

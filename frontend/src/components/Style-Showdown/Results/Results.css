@@ -1,0 +1,77 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Font family */
+body {
+  font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+}
+
+/* Example styles for Results page */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure the header stays on top */
+}
+  
+.hero-section {
+  margin-top: 120px; /* Adjust as needed */
+  padding: 20px;
+  background-color: #fcf8fa;
+  /* Additional styles for hero section */
+}
+
+.products-header {
+  text-align: center;
+  color: #1b0e17;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+/* Styles for ShopButton component */
+
+.shop-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px; /* Adjust padding as needed */
+    margin-bottom: 15px; /* Adding bottom margin */
+  }
+  
+  .shop-button {
+    min-width: 84px;
+    max-width: 480px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 48px;
+    padding: 0 24px;
+    background-color: #e71ea4;
+    color: #fcf8fa;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .shop-button:hover {
+    background-color: #d11691;
+  }
+
+  .style-icon-image {
+    background-image: url("https://cdn.usegalileo.ai/sdxl10/97275f0f-708a-481b-8d0c-3216d21c7848.png");
+    min-width: 300px; /* Adjust width as needed */
+  }

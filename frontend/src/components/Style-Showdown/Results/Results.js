@@ -5,11 +5,11 @@ import Description from '../Results/Description';
 import StyleIcon from '../Results/StyleIcon';
 import ShopButton from '../Results/ShopButton';
 import ProductsSection from '../Results/ProductsSection';
-import '../../../index.css';
+import './Results.css';
 
 function Results() {
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-[#fcf8fa] justify-between group/design-root overflow-x-hidden" style={{ fontFamily: '"Be Vietnam Pro", "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full min-h-screen flex-col bg-[#fcf8fa] justify-between group/design-root overflow-x-hidden">
       <div>
         <Header />
         <HeroSection />
