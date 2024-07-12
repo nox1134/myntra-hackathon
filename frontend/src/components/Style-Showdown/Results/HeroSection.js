@@ -1,5 +1,6 @@
 import React from 'react';
 import './Results.css'; // Import the Results.css file
+import '../../../index.css'; // Import the index.css file
 
 function HeroSection() {
   return (
