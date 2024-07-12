@@ -7,7 +7,7 @@ import ViewLanding from "./components/Muse/View/ViewLanding";
 import Explore from "./components/Muse/Explore/Explore";
 import Results from "./components/Style-Showdown/Results/Results";
 import QuizStarter from "./components/Style-Showdown/Quiz/QuizStarter";
-import QuizLanding from "./components/Style-Showdown/QuizLanding";
+import QuizLanding from "./components/Style-Showdown/Landing/QuizLanding";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
