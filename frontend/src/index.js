@@ -8,6 +8,12 @@ import Explore from "./components/Muse/Explore/Explore";
 import Results from "./components/Style-Showdown/Results/Results";
 import QuizStarter from "./components/Style-Showdown/Quiz/QuizStarter";
 import QuizLanding from "./components/Style-Showdown/QuizLanding";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init({
+  once: true, // This ensures that animations only occur once
+});
 
 
   ReactDOM.render(

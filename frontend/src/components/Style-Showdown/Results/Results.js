@@ -11,14 +11,13 @@ function Results() {
   const [showConfetti, setShowConfetti] = useState(true);
 
   useEffect(() => {
-    // Hide confetti after 5 seconds
     const timer = setTimeout(() => setShowConfetti(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-[#fcf8fa] justify-between group/design-root overflow-x-hidden" style={{ fontFamily: '"Be Vietnam Pro", "Noto Sans", sans-serif' }}>
-      {showConfetti && <Confetti />}
+      {showConfetti && <Confetti className={`confetti-container ${!showConfetti ? 'confetti-fade-out' : ''}`} />}
       <div>
         <Header />
         <HeroSection />
