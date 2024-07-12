@@ -44,34 +44,47 @@ const questions = [
 ];
 
 const QuizStarter = () => {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selections, setSelections] = useState(Array(questions.length).fill(false));
-
-  const handleNextClick = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [selections, setSelections] = useState(Array(questions.length).fill(false));
+  
+    const handleNextClick = () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+      }
+    };
+  
+    const handlePreviousClick = () => {
+      if (currentQuestionIndex > 0) {
+        setCurrentQuestionIndex(currentQuestionIndex - 1);
+        const progress = (selections.filter(selected => selected).length / questions.length) * 100;
+      }
+    };
+  
+    const handleSelection = (index) => {
+      const newSelections = [...selections];
+      newSelections[currentQuestionIndex] = index !== null;
+      setSelections(newSelections);
+    };
+  
+    const progress = (selections.filter(selected => selected).length / questions.length) * 100;
+  
+    return (
+      <div className="relative flex min-h-screen flex-col bg-[#fcf8fa] justify-between overflow-x-hidden" style={{ fontFamily: "'Be Vietnam Pro', 'Noto Sans', sans-serif" }}>
+        <Header title="Myntra Style Showdown" />
+        <Content
+          question={questions[currentQuestionIndex].question}
+          styles={questions[currentQuestionIndex].styles}
+          onSelection={handleSelection}
+        />
+        <Footer
+          onNextClick={handleNextClick}
+          onPreviousClick={handlePreviousClick}
+          progress={progress}
+          isLastQuestion={currentQuestionIndex === questions.length - 1}
+          isFirstQuestion={currentQuestionIndex === 0}
+        />
+      </div>
+    );
   };
-
-  const handleSelection = (index) => {
-    const newSelections = [...selections];
-    newSelections[currentQuestionIndex] = index !== null;
-    setSelections(newSelections);
-  };
-
-  const progress = (selections.filter(selected => selected).length / questions.length) * 100;
-
-  return (
-    <div className="relative flex min-h-screen flex-col bg-[#fcf8fa] justify-between overflow-x-hidden" style={{ fontFamily: "'Be Vietnam Pro', 'Noto Sans', sans-serif" }}>
-      <Header title="Myntra Style Showdown" />
-      <Content
-        question={questions[currentQuestionIndex].question}
-        styles={questions[currentQuestionIndex].styles}
-        onSelection={handleSelection}
-      />
-      <Footer onNextClick={handleNextClick} progress={progress} />
-    </div>
-  );
-};
-
-export default QuizStarter;
+  
+  export default QuizStarter;
