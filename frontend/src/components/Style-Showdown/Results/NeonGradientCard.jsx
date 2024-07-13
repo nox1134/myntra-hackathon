@@ -12,7 +12,7 @@ const NeonGradientCard = ({
   imageSrc,
   subtitle,
   description,
-  borderSize = 2,
+  borderSize = 1.5,
   borderRadius = 20,
   neonColors = {
     firstColor: "#0951BD",
