@@ -18,7 +18,7 @@ const NeonGradientCard = ({
     firstColor: "#0951BD",
     secondColor: "#F13AB1",
   },
-  height = "550px", // Default height
+  height = "600px", // Default height
   ...props
 }) => {
   const containerRef = useRef(null);
@@ -85,15 +85,29 @@ const NeonGradientCard = ({
       >
         <BlurIn
           word={heading}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold my-10 text-center bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold my-4 text-center"
           duration={2}
+          style={{
+            minHeight: "6rem", // Adjust minimum height to prevent text clipping
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "0.5rem", // Example margin added below the heading
+          }}
         />
+
         {imageSrc && (
           <div className="mb-4">
-            <img src={imageSrc} alt={subtitle} className="w-full rounded" />
-            <p className="text-center mt-2">{subtitle}</p>
+            <img
+              src={imageSrc}
+              alt={subtitle}
+              className="w-full rounded"
+              style={{ maxWidth: "100%", height: "auto", marginTop: "0" }}
+            />
+            <p className="text-center mt-2 text-blue-600 font-bold text-lg">{subtitle}</p>
           </div>
         )}
+
         <p>{description}</p>
         {children}
       </div>

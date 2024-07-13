@@ -1,10 +1,10 @@
-// src/components/Results/Results.jsx
+// Results.jsx
 import React from 'react';
 import Header from './Header';
 import ShopButton from '../Results/ShopButton';
 import ProductsSection from '../Results/ProductsSection';
-import './Results.css';
 import { NeonGradientCard } from './NeonGradientCard';
+import StyleIcon from './styleIcon.jpg'; // Adjust the import path as needed
 import { ConfettiSideCannons } from './ConfettiSideCannons'; // Adjust the import path if necessary
 
 const Results = () => {
@@ -12,13 +12,13 @@ const Results = () => {
     <div className="App">
       <Header />
       <div className="content p-8">
-        <ConfettiSideCannons />
+      <ConfettiSideCannons />
         <NeonGradientCard
           className="max-w-md mx-auto"
-          heading="Amazing Title"
-          imageSrc="https://via.placeholder.com/150"
-          subtitle="Subtitle Here"
-          description="This is the description of the card. It can be a bit longer to provide more information."
+          heading="Style Icon"
+          imageSrc={StyleIcon}
+          subtitle="Audrey Hepburn from Breakfast at Tiffany's"
+          description="This is the description of the card. It can be a bit longer to provide more information. This is the description of the card. It can be a bit longer to provide more information. This is the description of the card. It can be a bit longer to provide more information. This is the description of the card. It can be a bit longer to provide more information."
         />
       </div>
       <ProductsSection />
