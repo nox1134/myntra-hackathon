@@ -18,6 +18,29 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hover-shake:hover {
+  animation: shake 1s ease-in-out ; /* Adjust animation duration */
+}
+
+
 /* Example styles for Results page */
 .header {
   position: fixed;
@@ -36,7 +59,7 @@ body {
 }
 
 .main-content {
-  padding-top: 140px; /* Adjust this value to match the height of your header */
+  padding-top: 160px; /* Adjust this value to match the height of your header */
 }
 
 .products-section {
