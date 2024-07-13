@@ -12,7 +12,7 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <div className="shop-the-look" data-aos="fade-up" data-aos-duration="1500">
+    <div className="shop-the-look products-section" data-aos="fade-up" data-aos-duration="1500">
       <h2 className="title">Products for your style</h2>
       <div className="products-container">
         <div className="product-list">
@@ -22,14 +22,15 @@ const ProductsSection = () => {
                 className="product-image"
                 style={{ backgroundImage: `url(${product.imageUrl})` }}
               ></div>
-               <p className="product-brand">{product.brand}</p>
-              <p className="product-title">{product.title}</p>
-              <p className="product-price">{product.price}</p>
+              <div className="product-info">
+                <p className="product-brand">{product.brand}</p>
+                <p className="product-title">{product.title}</p>
+                <p className="product-price">{product.price}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <div className="footer"></div>
     </div>
   );
 };

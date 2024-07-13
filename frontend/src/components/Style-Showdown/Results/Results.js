@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import Confetti from 'react-confetti';
-import Header from '../Results/Header';
-import HeroSection from '../Results/HeroSection';
-import StyleIcon from '../Results/StyleIcon';
+// src/components/Results/Results.jsx
+import React from 'react';
+import Header from './Header';
 import ShopButton from '../Results/ShopButton';
 import ProductsSection from '../Results/ProductsSection';
 import './Results.css';
+import { NeonGradientCard } from './NeonGradientCard';
+import { ConfettiSideCannons } from './ConfettiSideCannons'; // Adjust the import path if necessary
 
-function Results() {
-  const [showConfetti, setShowConfetti] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowConfetti(false), 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
+const Results = () => {
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-[#fcf8fa] justify-between group/design-root overflow-x-hidden" style={{ fontFamily: '"Be Vietnam Pro", "Noto Sans", sans-serif' }}>
-      {showConfetti && <Confetti className={`confetti-container ${!showConfetti ? 'confetti-fade-out' : ''}`} />}
-      <div>
-        <Header />
-        <HeroSection />
-        <StyleIcon />
-        <ProductsSection />
+    <div className="App">
+      <Header />
+      <div className="main-content p-8">
+        <ConfettiSideCannons />
+        <NeonGradientCard className="max-w-md mx-auto">
+          <h1 className="text-2xl font-bold">Hello, World!</h1>
+          <p>This is a neon gradient card component with a white background.</p>
+        </NeonGradientCard>
       </div>
+      <ProductsSection />
+
       <ShopButton />
     </div>
   );
-}
+};
 
 export default Results;
