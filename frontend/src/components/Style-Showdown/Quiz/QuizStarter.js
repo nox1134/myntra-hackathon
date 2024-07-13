@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from './Header';
 import Content from './Content';
 import Footer from './Footer';
+import '../../../index.css'
+import '../Results/Results.css'
 
 const questions = [
   { question: 'Question 1: What describes your fashion personality best?', styles: [

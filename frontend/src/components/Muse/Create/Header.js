@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "../../../Create-muse.css";
+import './Create-muse.css'
 
 const Header = () => {
   const location = useLocation();

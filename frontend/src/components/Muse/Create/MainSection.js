@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../Create-muse.css';
+import './Create-muse.css';
 
 const MainSection = () => {
   const [links, setLinks] = useState(['']);
