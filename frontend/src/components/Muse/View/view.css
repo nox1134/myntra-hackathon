@@ -36,8 +36,15 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: 0.75rem;
     min-width: 15rem;
+    background-color: white; /* White background for product cards */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow for a card effect */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    border-radius: 0; /* Remove rounded corners */
+  }
+  
+  .product-card:hover {
+    transform: scale(0.95); /* Zoom out slightly on hover */
   }
   
   .product-image {
@@ -45,12 +52,16 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 1rem;
     aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
+    border-radius: 0; /* Remove rounded corners */
   }
-
+  
+  .product-info {
+    padding: 1rem; /* Add padding inside the card */
+  }
+  
   .product-title {
     color: #1b0e17;
     font-size: 1rem;
@@ -58,8 +69,11 @@
     line-height: 1.5;
   }
   
+  .product-brand, .product-price {
+    color: #888; /* Add a different color for brand and price */
+  }
+
   .footer {
     height: 1.25rem;
     background-color: #fcf8fa;
   }
-  
