@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header'; // Ensure correct path
-import Main from './Main'; // Ensure correct path
+import Header from './Header'; 
+import Main from './Main'; 
 import '../../../index.css';
 
 const QuizLanding = () => {
