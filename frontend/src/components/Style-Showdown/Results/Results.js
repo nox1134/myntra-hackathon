@@ -13,13 +13,15 @@ const Results = () => {
       <Header />
       <div className="content p-8">
         <ConfettiSideCannons />
-        <NeonGradientCard className="max-w-md mx-auto">
-          <h1 className="text-2xl font-bold">Hello, World!</h1>
-          <p>This is a neon gradient card component with a white background.</p>
-        </NeonGradientCard>
+        <NeonGradientCard
+          className="max-w-md mx-auto"
+          heading="Amazing Title"
+          imageSrc="https://via.placeholder.com/150"
+          subtitle="Subtitle Here"
+          description="This is the description of the card. It can be a bit longer to provide more information."
+        />
       </div>
       <ProductsSection />
-
       <ShopButton />
     </div>
   );

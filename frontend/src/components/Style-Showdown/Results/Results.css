@@ -4,7 +4,7 @@
 
 body {
   font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
-  background: linear-gradient(45deg, rgba(241, 58, 177, 0.1), rgba(231, 39, 68, 0.1), rgba(253, 145, 60, 0.1), rgba(240, 85, 36, 0.1), rgba(41, 48, 62, 0.1));
+  background: linear-gradient(45deg, rgba(241, 58, 177, 0.15), rgba(231, 39, 68, 0.15), rgba(253, 145, 60, 0.15), rgba(240, 85, 36, 0.15), rgba(59, 77, 113, 0.15));
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   margin: 0;
@@ -180,4 +180,12 @@ body {
 
 .product-brand, .product-price {
   color: #888; /* Add a different color for brand and price */
+}
+
+.neon-gradient-card img {
+  transition: none; /* Remove any transition effect */
+}
+
+.neon-gradient-card img:hover {
+  transform: none; /* Prevent any transformation on hover */
 }

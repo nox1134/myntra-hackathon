@@ -2,18 +2,23 @@
 
 import { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
+import BlurIn from "./BlurIn";
 import "./Results.css"; // Ensure you import the CSS file
 
 const NeonGradientCard = ({
   className,
   children,
+  heading,
+  imageSrc,
+  subtitle,
+  description,
   borderSize = 2,
   borderRadius = 20,
   neonColors = {
     firstColor: "#0951BD",
     secondColor: "#F13AB1",
   },
-  height = '550px', // Default height
+  height = "550px", // Default height
   ...props
 }) => {
   const containerRef = useRef(null);
@@ -40,7 +45,7 @@ const NeonGradientCard = ({
       const { offsetWidth, offsetHeight } = containerRef.current;
       setDimensions({ width: offsetWidth, height: offsetHeight });
     }
-  }, [children]);
+  }, [heading, imageSrc, subtitle, description]);
 
   return (
     <div
@@ -60,14 +65,14 @@ const NeonGradientCard = ({
         height: height, // Set the height here
       }}
       className={classNames(
-        "relative z-10 w-full rounded-[var(--border-radius)] hover-shake", // Add hover-shake class
-        className,
+        "neon-gradient-card relative z-10 w-full rounded-[var(--border-radius)] hover-shake", // Add hover-shake class
+        className
       )}
       {...props}
     >
       <div
         className={classNames(
-          "relative h-full min-h-[inherit] w-full rounded-[var(--card-content-radius)] bg-white p-6",
+          "relative h-full min-h-[inherit] w-full rounded-[var(--card-content-radius)] bg-white p-6 flex flex-col justify-center items-center", // Centering content vertically and horizontally
           "before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-10 before:block",
           "before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-[var(--border-radius)] before:content-['']",
           "before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]",
@@ -75,9 +80,21 @@ const NeonGradientCard = ({
           "after:absolute after:-left-[var(--border-size)] after:-top-[var(--border-size)] after:-z-10 after:block",
           "after:h-[var(--pseudo-element-height)] after:w-[var(--pseudo-element-width)] after:rounded-[var(--border-radius)] after:blur-[var(--after-blur)] after:content-['']",
           "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:opacity-80",
-          "after:animate-backgroundPositionSpin",
+          "after:animate-backgroundPositionSpin"
         )}
       >
+        <BlurIn
+          word={heading}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold my-1 text-center bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text"
+          duration={2}
+        />
+        {imageSrc && (
+          <div className="mb-4">
+            <img src={imageSrc} alt={subtitle} className="w-full rounded" />
+            <p className="text-center mt-2">{subtitle}</p>
+          </div>
+        )}
+        <p>{description}</p>
         {children}
       </div>
     </div>
