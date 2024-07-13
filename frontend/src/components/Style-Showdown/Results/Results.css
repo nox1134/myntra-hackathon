@@ -58,7 +58,7 @@ body {
   z-index: 1000; /* Ensure the header stays on top */
 }
 
-.main-content {
+.content {
   padding-top: 160px; /* Adjust this value to match the height of your header */
 }
 

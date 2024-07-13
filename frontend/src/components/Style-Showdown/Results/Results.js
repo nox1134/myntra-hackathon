@@ -11,7 +11,7 @@ const Results = () => {
   return (
     <div className="App">
       <Header />
-      <div className="main-content p-8">
+      <div className="content p-8">
         <ConfettiSideCannons />
         <NeonGradientCard className="max-w-md mx-auto">
           <h1 className="text-2xl font-bold">Hello, World!</h1>
