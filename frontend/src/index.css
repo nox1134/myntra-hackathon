@@ -71,3 +71,25 @@ code {
 .view-landing {
   padding-top: 70px; /* Adjust this value to match the height of your header */
 }
+
+header, main {
+  position: relative;
+  z-index: 10;
+}
+
+button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
