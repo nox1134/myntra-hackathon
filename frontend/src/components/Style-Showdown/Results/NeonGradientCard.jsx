@@ -85,7 +85,7 @@ const NeonGradientCard = ({
       >
         <BlurIn
           word={heading}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold my-1 text-center bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold my-10 text-center bg-gradient-to-r from-blue-400 to-pink-600 text-transparent bg-clip-text"
           duration={2}
         />
         {imageSrc && (
