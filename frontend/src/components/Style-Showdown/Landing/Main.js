@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Main = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
+  const bottomDivRef = useRef(null);
+
   const handleScroll = () => {
-    const bottomDiv = document.getElementById('bottom-div');
-    if (bottomDiv) {
-      bottomDiv.scrollIntoView({ behavior: 'smooth' });
+    if (bottomDivRef.current) {
+      bottomDivRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  const handleClick=()=>{
+
+  const handleClick = () => {
     navigate('/quiz-page');
-  }
+  };
 
   const pastQuizzes = [
     {
@@ -53,7 +56,6 @@ const Main = () => {
   ];
 
   return (
-    
     <>
       <main className="flex items-center justify-center min-h-screen px-4">
         <div className="flex flex-col items-center text-center relative z-10">
@@ -71,7 +73,7 @@ const Main = () => {
           <p className="text-gray-500 mb-10 text-lg leading-relaxed">
             Find your style of clothes your way!
           </p>
-          <button className="bg-gradient-to-r from-purple-400 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105 " onClick={handleClick}>
+          <button className="bg-gradient-to-r from-purple-400 to-pink-600 text-white px-6 py-3 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105" onClick={handleClick}>
             Take the Quiz
           </button>
           <div className="mt-12 animate-bounce">
@@ -94,33 +96,43 @@ const Main = () => {
           </div>
         </div>
       </main>
-      <div id="bottom-div" className="min-h-screen py-16 px-4">
+      <div ref={bottomDivRef} className="min-h-screen py-16 px-4">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-pink-600">
             Past Quizzes
           </h2>
           <div className="relative">
-            <div className="flex space-x-8 py-8 overflow-x-auto scrollbar-hidden">
-              {pastQuizzes.map((quiz) => (
-                <div key={quiz.id} className="flex-shrink-0 w-80 bg-white p-6 rounded-lg shadow-xl border border-gray-200 transition-transform duration-300 transform hover:scale-105">
-                  <img src={quiz.image} alt={quiz.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-                  <h3 className="text-2xl font-semibold text-purple-800 mb-2">{quiz.title}</h3>
-                  <p className="text-gray-700 text-lg leading-relaxed mb-4">{quiz.description}</p>
-                  <button className="bg-gradient-to-r from-purple-400 to-pink-600 text-white px-4 py-2 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
-                    View Details
-                  </button>
-                </div>
-              ))}
+            <div className="scroll-container">
+              <div className="scroll-inner">
+                {pastQuizzes.map((quiz) => (
+                  <div
+                    key={quiz.id}
+                    className="card"
+                  >
+                    <img src={quiz.image} alt={quiz.title} className="card-image" />
+                    <h3 className="card-title">{quiz.title}</h3>
+                    <p className="card-description">{quiz.description}</p>
+                    <button className="card-button">
+                      View Details
+                    </button>
+                  </div>
+                ))}
+                {/* Duplicate content for infinite scroll */}
+                {pastQuizzes.map((quiz) => (
+                  <div
+                    key={`duplicate-${quiz.id}`}
+                    className="card"
+                  >
+                    <img src={quiz.image} alt={quiz.title} className="card-image" />
+                    <h3 className="card-title">{quiz.title}</h3>
+                    <p className="card-description">{quiz.description}</p>
+                    <button className="card-button">
+                      View Details
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-            <style jsx>{`
-              .scrollbar-hidden::-webkit-scrollbar {
-                display: none;
-              }
-              .scrollbar-hidden {
-                -ms-overflow-style: none; /* IE and Edge */
-                scrollbar-width: none; /* Firefox */
-              }
-            `}</style>
           </div>
         </div>
       </div>
