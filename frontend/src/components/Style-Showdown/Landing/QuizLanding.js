@@ -21,7 +21,7 @@ const QuizLanding = () => {
     };
   }, []);
   return (
-    <div className="body quiz-landing">
+    <div className="landing">
     <div className="flex flex-col items-center justify-center p-4 relative z-10">
       <Particles className="absolute inset-0 z-0" color="#ffffff" />
       <Header />

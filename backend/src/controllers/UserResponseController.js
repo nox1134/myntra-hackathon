@@ -25,8 +25,7 @@ const addUserResponse = async (req, res) => {
 };
 const getLatestUserResponse = async (req, res) => {
     try {
-      const { userId } = req.params; 
-      const latestResponse = await UserResponse.findOne({ userId }).sort({ createdAt: -1 }); // Sort by creation date in descending order
+      const latestResponse = await UserResponse.findOne().sort({ createdAt: -1 }); // Sort by creation date in descending order
       if (!latestResponse) {
         return res.status(404).json({ message: 'No user responses found' });
       }
@@ -35,6 +34,7 @@ const getLatestUserResponse = async (req, res) => {
       res.status(500).json({ error: 'Failed to fetch latest user response' });
     }
   };
+  
 
 
 module.exports = {
