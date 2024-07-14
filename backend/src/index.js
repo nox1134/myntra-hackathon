@@ -25,5 +25,6 @@ mongoose.connect(mongoURI)
 
 
 app.use('/api/product', ProductRoutes);
+app.use('/api/quiz',QuizRoutes);
 
 
