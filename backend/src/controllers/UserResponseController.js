@@ -25,7 +25,7 @@ const addUserResponse = async (req, res) => {
 };
 const getLatestUserResponse = async (req, res) => {
     try {
-      const latestResponse = await UserResponse.findOne().sort({ createdAt: -1 }); // Sort by creation date in descending order
+      const latestResponse = await UserResponse.findOne().limit(1).sort({$natural:-1}) ; // Sort by creation date in descending order
       if (!latestResponse) {
         return res.status(404).json({ message: 'No user responses found' });
       }
