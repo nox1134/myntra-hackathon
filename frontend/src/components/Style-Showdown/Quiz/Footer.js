@@ -5,12 +5,10 @@ const Footer = ({ onNextClick, onPreviousClick, progress, isLastQuestion, isFirs
     const navigate = useNavigate();
 
     const handleSubmitClick = async () => {
-        // Call the onSubmit function passed from the parent component
         if (onSubmit) {
             await onSubmit(); // Ensure onSubmit completes before navigation
         }
-        // Navigate to the quiz results page
-        navigate('/quiz-results');
+        navigate('/quiz-results'); // Navigate to the quiz results page
     };
 
     return (
