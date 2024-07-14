@@ -145,11 +145,12 @@ body {
 }
 
 .form-input {
-  width: calc(100% - 32px); /* Adjusted width to account for padding */
+  width: 100%; /* Make sure all inputs are 100% width */
   padding: 8px 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 8px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 textarea.form-input {
@@ -157,18 +158,13 @@ textarea.form-input {
 }
 
 select.form-input {
-  width: 100%;
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 8px;
   background-color: #fff;
   color: #333;
 }
 
 .add-link-button {
   display: inline-block;
-  padding: 8px 12px;
+  padding: 8px;
   margin-top: 8px;
   font-size: 16px;
   font-weight: bold;
@@ -178,6 +174,9 @@ select.form-input {
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
+  height: 32px;
+  width: 32px;
+  line-height: 16px; /* Center the text vertically */
 }
 
 .add-link-button:hover {
@@ -191,7 +190,7 @@ select.form-input {
 .remove-link-button {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 8px;
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
@@ -202,6 +201,7 @@ select.form-input {
 
 .remove-link-button:hover {
   color: darkred;
+  transform: translateY(-50%); /* Prevents any additional movement */
 }
 
 /* App styles */
