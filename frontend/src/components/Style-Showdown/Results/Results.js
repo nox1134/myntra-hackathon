@@ -14,8 +14,7 @@ const Results = () => {
   useEffect(() => {
     const fetchOutcome = async () => {
       try {
-        const userId = '66943d9884cd8fb0119211a7'; 
-        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/response/latest/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/response/latest`);
         setOutcome(response.data.outcome);
       } catch (error) {
         console.error('Error fetching outcome:', error);

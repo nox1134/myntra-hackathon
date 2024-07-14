@@ -4,5 +4,5 @@ const UserResponseController = require('../controllers/UserResponseController');
 
 router.get('/', UserResponseController.getAllUserResponses);
 router.post('/', UserResponseController.addUserResponse);
-router.get('/latest/:userId',UserResponseController.getLatestUserResponse)
+router.get('/latest',UserResponseController.getLatestUserResponse)
 module.exports = router;
