@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <img src="https://placehold.co/40x40" alt="logo" className="logo" />
+        <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Myntra.png" alt="logo" className="logo" />
         <nav>
           <Link
             to="/explore"
@@ -35,7 +35,7 @@ const Header = () => {
       </div>
       <div className="header-right">
         <img
-          src="https://placehold.co/40x40"
+          src="https://t3.ftcdn.net/jpg/06/33/54/78/360_F_633547842_AugYzexTpMJ9z1YcpTKUBoqBF0CUCk10.jpg"
           alt="user avatar"
           className="avatar"
         />
