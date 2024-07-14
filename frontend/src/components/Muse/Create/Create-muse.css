@@ -58,10 +58,10 @@ body {
 .header-link::after {
   content: '';
   position: absolute;
-  bottom: -18.5px; /* Adjust the position of the line */
+  bottom: -17px; /* Adjust the position of the line */
   left: 0;
   width: 0;
-  height: 2px;
+  height: 3px;
   background-color: #007bff; /* Color of the underline */
   transition: width 0.2s, left 0.2s; /* Added transition for left property */
 }
@@ -174,9 +174,9 @@ select.form-input {
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
-  height: 32px;
-  width: 32px;
-  line-height: 16px; /* Center the text vertically */
+  height: 28px;
+  width: 28px;
+  line-height: 4px; /* Center the text vertically */
 }
 
 .add-link-button:hover {
@@ -189,18 +189,18 @@ select.form-input {
 
 .remove-link-button {
   position: absolute;
-  top: 50%;
+  top: 40%;
   right: 8px;
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  color: red;
-  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
   cursor: pointer;
 }
 
 .remove-link-button:hover {
-  color: darkred;
+  color: red;
   transform: translateY(-50%); /* Prevents any additional movement */
 }
 
@@ -244,4 +244,11 @@ select.form-input {
 
 .form-button.cancel:hover {
   background-color: #999;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center; /* Center align the buttons */
+  margin-top: 16px; /* Adjust margin if needed */
+  margin-bottom: 10px;
 }
