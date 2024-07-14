@@ -140,14 +140,7 @@ const QuizStarter = () => {
         isFirstQuestion={currentQuestionIndex === 0}
         onSubmit={handleSubmit}
       />
-      <div className="p-4">
-        <h2>Temporary Scores:</h2>
-        {Object.keys(tempScores).map((outcome) => (
-          <div key={outcome}>
-            {outcome}: {tempScores[outcome]}
-          </div>
-        ))}
-      </div>
+
     </div>
   );
 };
