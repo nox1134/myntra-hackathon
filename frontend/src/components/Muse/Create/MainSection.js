@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from './Button';
 import './Create-muse.css';
 
 const MainSection = () => {
@@ -23,6 +24,16 @@ const MainSection = () => {
     const newLinks = [...links];
     newLinks.splice(index, 1);
     setLinks(newLinks);
+  };
+
+  const handleCreate = () => {
+    // Handle create action
+    console.log('Create button clicked');
+  };
+
+  const handleCancel = () => {
+    // Handle cancel action
+    console.log('Cancel button clicked');
   };
 
   return (
@@ -75,11 +86,15 @@ const MainSection = () => {
           </div>
           <div className="form-group">
             <label className="form-label" htmlFor="visibility">Visibility</label>
-            <select id="visibility" className="form-input">
+            <select id="visibility" className="form-input" value={visibility} onChange={handleVisibilityChange}>
               <option value="private">Private</option>
               <option value="public">Public</option>
             </select>
           </div>
+        </div>
+        <div className="form-buttons">
+          <Button text="Create" onClick={handleCreate} className="create" />
+          <Button text="Cancel" onClick={handleCancel} className="cancel" />
         </div>
       </div>
     </section>
