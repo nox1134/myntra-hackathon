@@ -23,32 +23,42 @@ const getQuestionById = async (req, res) => {
   }
 };
 
-// Add a new question
 const addQuestion = async (req, res) => {
-  const { questionText, options } = req.body;
-
-  // Validate request body
-  if (!questionText || !options || !Array.isArray(options) || options.length !== 4) {
-    return res.status(400).json({ message: 'Invalid question or options format' });
-  }
-
-  const question = new Question({
-    _id: new mongoose.Types.ObjectId(),
-    questionText,
-    options: options.map(option => ({
+    const { questionText, options } = req.body;
+  
+    if (!questionText || !options || !Array.isArray(options) || options.length !== 4) {
+      return res.status(400).json({ message: 'Invalid question or options format' });
+    }
+  
+    for (const option of options) {
+      if (!option.name || !option.imageUrl || !Array.isArray(option.outcomeScores)) {
+        return res.status(400).json({ message: 'Invalid option format' });
+      }
+      
+      for (const outcomeScore of option.outcomeScores) {
+        if (typeof outcomeScore.outcome !== 'string' || typeof outcomeScore.score !== 'number') {
+          return res.status(400).json({ message: 'Invalid outcomeScore format' });
+        }
+      }
+    }
+  
+    const question = new Question({
       _id: new mongoose.Types.ObjectId(),
-      ...option
-    }))
-  });
-
-  try {
-    const savedQuestion = await question.save();
-    res.status(201).json(savedQuestion);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
+      questionText,
+      options: options.map(option => ({
+        _id: new mongoose.Types.ObjectId(),
+        ...option
+      }))
+    });
+  
+    try {
+      const savedQuestion = await question.save();
+      res.status(201).json(savedQuestion);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  };
+  
 // Update a question by ID
 const updateQuestionById = async (req, res) => {
   try {
