@@ -18,7 +18,7 @@ const NeonGradientCard = ({
     firstColor: "#0951BD",
     secondColor: "#F13AB1",
   },
-  height = "600px", // Default height
+  height = "730px", // Default height
   ...props
 }) => {
   const containerRef = useRef(null);

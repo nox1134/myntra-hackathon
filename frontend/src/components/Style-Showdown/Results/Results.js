@@ -4,7 +4,6 @@ import Header from './Header';
 import ShopButton from '../Results/ShopButton';
 import ProductsSection from '../Results/ProductsSection';
 import { NeonGradientCard } from './NeonGradientCard';
-import StyleIcon from './styleIcon.jpg';
 import { ConfettiSideCannons } from './ConfettiSideCannons';
 import './Results.css';
 
@@ -42,9 +41,9 @@ const Results = () => {
         <NeonGradientCard
           className="max-w-md mx-auto"
           heading={outcome}
-          imageSrc={StyleIcon}
-          subtitle="Audrey Hepburn from Breakfast at Tiffany's"
-          description="This is the description of the card. It can be a bit longer to provide more information."
+          imageSrc="https://i.redd.it/priyanka-chopra-in-dil-dhadakne-do-2015-styled-by-arjun-v0-403ve5v85y6b1.jpg?width=976&format=pjpg&auto=webp&s=2b3f9deb6107893fe870553c2c8ad9d22f0be7ca"
+          subtitle="Priyanka Chopra from Dil Dhadakne Do"
+          description="Congratulations! You are a Chic Trendsetter. Sleek, sophisticated, and always on point, your wardrobe is filled with blazers, shirts, trousers, and bodysuits. Layered necklaces and a chic crossbody bag are your signature accessories. This season, rock those chunky sneakers and neon colors with confidence, and continue to turn heads wherever you go."
         />
       </div>
       <ProductsSection products={products} /> 
