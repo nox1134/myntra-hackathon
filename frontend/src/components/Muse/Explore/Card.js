@@ -10,6 +10,10 @@ const Card = ({ image, title, text }) => {
     navigate("/view-muse");
   };
 
+  const handleButtonClick = (e) => {
+    e.stopPropagation(); // Prevent navigation when the button is clicked
+  };
+
   return (
     <div className="card" onClick={handleClick}>
       <div className="card__image">
@@ -20,10 +24,16 @@ const Card = ({ image, title, text }) => {
         <p>{text}</p>
         <div className="card__actions">
           <div className="flex justify-between items-center">
-            <button className="flex items-center space-x-3 text-gray-500 hover:text-gray-700 transition-colors duration-200">
+            <button
+              className="flex items-center space-x-3 text-gray-500 hover:text-gray-700 transition-colors duration-200"
+              onClick={handleButtonClick}
+            >
               <FontAwesomeIcon icon={faHeart} className="h-5 w-5" />
             </button>
-            <button className="flex items-center space-x-3 text-gray-500 hover:text-gray-700 transition-colors duration-200">
+            <button
+              className="flex items-center space-x-3 text-gray-500 hover:text-gray-700 transition-colors duration-200 ml-4" // Added margin-left for spacing
+              onClick={handleButtonClick}
+            >
               <FontAwesomeIcon icon={faShareAlt} className="h-5 w-5" />
             </button>
           </div>

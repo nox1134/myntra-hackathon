@@ -547,3 +547,13 @@ h1 {
   transform: scale(1.05);
   font-weight: bold;
 }
+
+.card__actions .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__actions button {
+  margin-left: 5rem; /* Space between buttons */
+}
+
