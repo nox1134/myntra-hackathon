@@ -95,7 +95,6 @@ const Explore = () => {
                 image={card.image}
                 title={card.title}
                 text={card.text}
-                button={card.button}
               />
             </div>
           ))}
