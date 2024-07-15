@@ -8,7 +8,7 @@ const Content = ({ question, styles, onSelection, selectedOptionIndex }) => {
 
   return (
     <div>
-      <p className="text-[#1b0e17] text-base font-normal leading-normal pb-3 pt-1 px-4">{question}</p>
+      <p className="text-[#1b0e17] text-2xl font-bold leading-tight tracking-wide px-4 pb-3 pt-9">{question}</p>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
         {styles.map((style, index) => (
           <div key={style.name} className="flex flex-col gap-3 pb-3 group">

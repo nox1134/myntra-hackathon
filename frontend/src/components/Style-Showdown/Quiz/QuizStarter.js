@@ -125,8 +125,8 @@ const QuizStarter = () => {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-[#fcf8fa] justify-between overflow-x-hidden" style={{ fontFamily: "'Be Vietnam Pro', 'Noto Sans', sans-serif" }}>
-      <Header title="Myntra Style Showdown" />
-      <Content
+      <Header />
+]      <Content
         question={questions[currentQuestionIndex].questionText}
         styles={questions[currentQuestionIndex].options}
         onSelection={handleSelection}

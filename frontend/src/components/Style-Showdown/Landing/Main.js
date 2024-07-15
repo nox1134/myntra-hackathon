@@ -71,12 +71,12 @@ const Main = () => {
           <span className="text-white">STYLE SHOWDOWN QUIZ</span>
           </p>
           <h1 className="text-6xl font-extrabold mb-6 leading-tight">
-          <span className="text-white">Unleash Your</span> <br />
+          <span className="text-white">Which</span> <br />
             <span className="bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-              Style Aura
+              Fashion Perona
             </span>
             <br />
-            <span className="text-white">Today!</span>
+            <span className="text-white">Are You?</span>
           </h1>
           <p className="text-gray-500 mb-10 text-lg leading-relaxed text-light">
             Find your style of clothes your way!
