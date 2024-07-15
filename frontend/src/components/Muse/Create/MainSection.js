@@ -5,6 +5,7 @@ import "./Create-muse.css";
 const MainSection = () => {
   const [links, setLinks] = useState([""]);
   const [visibility, setVisibility] = useState("private");
+  const [profileImage, setProfileImage] = useState(null);
 
   const handleVisibilityChange = (e) => {
     setVisibility(e.target.value);
@@ -24,6 +25,10 @@ const MainSection = () => {
     const newLinks = [...links];
     newLinks.splice(index, 1);
     setLinks(newLinks);
+  };
+
+  const handleProfileImageChange = (e) => {
+    setProfileImage(e.target.files[0]);
   };
 
   const handleCreate = () => {
@@ -60,6 +65,17 @@ const MainSection = () => {
               id="description"
               placeholder="Add a detailed description"
               className="form-input"
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label" htmlFor="profileImage">
+              Add Profile Image
+            </label>
+            <input
+              type="file"
+              id="profileImage"
+              className="form-input"
+              onChange={handleProfileImageChange}
             />
           </div>
           <div className="form-group">
