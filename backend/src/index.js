@@ -3,9 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const QuizRoutes = require('./routes/QuizRoutes');
-const ResultRoutes = require('./routes/ResultRoutes');
-const ProductRoutes = require('./routes/ProductRoutes');
 const UserResponseRoutes = require('./routes/UserResponseRoutes');
+const OutcomeRoutes = require('./routes/OutcomeRoutes');
 const cors = require('cors');
 
 const app = express();
@@ -25,9 +24,9 @@ mongoose.connect(mongoURI)
   .catch(err => console.error('Error connecting to database:', err));
 
 
-app.use('/api/product', ProductRoutes);
 app.use('/api/quiz',QuizRoutes);
 app.use('/api/response',UserResponseRoutes);
+app.use('/api/outcome', OutcomeRoutes);
 
 
 
