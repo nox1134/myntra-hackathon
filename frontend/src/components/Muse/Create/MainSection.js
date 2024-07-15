@@ -4,6 +4,7 @@ import "./Create-muse.css";
 
 const MainSection = () => {
   const [links, setLinks] = useState([""]);
+  const [images, setImages] = useState([]);
   const [visibility, setVisibility] = useState("private");
   const [profileImage, setProfileImage] = useState(null);
 
@@ -29,6 +30,21 @@ const MainSection = () => {
 
   const handleProfileImageChange = (e) => {
     setProfileImage(e.target.files[0]);
+  };
+
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+    const newImages = [...images];
+    files.forEach(file => {
+      newImages.push(file);
+    });
+    setImages(newImages);
+  };
+
+  const removeImage = (index) => {
+    const newImages = [...images];
+    newImages.splice(index, 1);
+    setImages(newImages);
   };
 
   const handleCreate = () => {
@@ -82,19 +98,32 @@ const MainSection = () => {
             <label className="form-label" htmlFor="images">
               Add Images
             </label>
-            <div className="upload-section">
-              <img
-                src="https://placehold.co/24x24"
-                alt="upload icon"
-                className="upload-icon"
+            <div className="image-upload-container">
+              <input
+                type="file"
+                id="imageUpload"
+                className="form-input"
+                multiple
+                onChange={handleImageChange}
               />
-              <p className="upload-text">
-                Choose a file or drag and drop it here
-              </p>
-              <p className="upload-subtext">
-                We recommend using high-quality .jpg files less than 20MB or
-                .mp4 files less than 200MB.
-              </p>
+              <div className="uploaded-images">
+                {images.map((image, index) => (
+                  <div key={index} className="uploaded-image">
+                    <img
+                      src={URL.createObjectURL(image)}
+                      alt={`Uploaded ${index}`}
+                      className="uploaded-image-preview"
+                    />
+                    <button
+                      type="button"
+                      className="remove-image-button"
+                      onClick={() => removeImage(index)}
+                    >
+                      &times;
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="form-group">

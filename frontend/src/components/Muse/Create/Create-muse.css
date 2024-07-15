@@ -254,3 +254,49 @@ select.form-input {
   margin-top: 16px; /* Adjust margin if needed */
   margin-bottom: 10px;
 }
+
+/* Styles for image upload container */
+.image-upload-container {
+  margin-bottom: 16px;
+}
+
+.uploaded-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.uploaded-image {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.uploaded-image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-image-button:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
