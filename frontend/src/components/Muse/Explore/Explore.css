@@ -555,5 +555,6 @@ h1 {
 
 .card__actions button {
   margin-left: 5rem; /* Space between buttons */
+  margin-right: 5rem;
 }
 
