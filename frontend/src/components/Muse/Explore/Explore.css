@@ -558,3 +558,11 @@ h1 {
   margin-right: 5rem;
 }
 
+.card__actions .text-red-500 {
+  color: #f56565; /* TailwindCSS red-500 color */
+}
+
+/* Styles for the share button hover effect */
+.card__actions button:hover .fa-share-alt {
+  color: #4299e1; /* TailwindCSS blue-500 color */
+}
