@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const MuseController = require('../controllers/MuseController');
+
+router.post('/create', MuseController.createMuse);
+router.get('/getAll', MuseController.getAllMuses);
+
+module.exports = router;

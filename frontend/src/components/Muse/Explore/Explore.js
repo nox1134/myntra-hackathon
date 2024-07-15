@@ -1,103 +1,50 @@
-import "./Explore.css";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import Header from './Header';
 import Search from './Search';
 import Card from './Card';
-import Header from './Header';
-
-const cards = [
-  {
-    image:
-      "https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Iceland",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/1559908/pexels-photo-1559908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Portugal",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/2032332/pexels-photo-2032332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Austria",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/126292/pexels-photo-126292.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Czechia",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/13787796/pexels-photo-13787796.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Finland",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Iceland",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/1559908/pexels-photo-1559908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Portugal",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/2032332/pexels-photo-2032332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    title: "Austria",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/126292/pexels-photo-126292.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Czechia",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/13787796/pexels-photo-13787796.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Finland",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/1680381/pexels-photo-1680381.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Norway",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-
-  {
-    image:
-      "https://images.pexels.com/photos/1680381/pexels-photo-1680381.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    title: "Norway",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-
-];
 
 const Explore = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const response = await axios.get('http://localhost:7001/api/muse/getAll');
+        setCards(response.data);
+        const imagePath=response.data.profileImage;
+        console.log('Image URL:', `http://localhost:7001/uploads/${imagePath}`);
+      } catch (error) {
+        console.error('Error fetching board data:', error);
+      }
+    };
+
+    fetchCards();
+  }, []);
+
   return (
     <div className="view-landing">
       <Header />
       <Search />
       <div className="grid-container">
         <div className="grid-x grid-padding-x grid-margin-y">
-          {cards.map((card, index) => (
-            <div key={index} className="cell medium-3">
-              <Card
-                image={card.image}
-                title={card.title}
-                text={card.text}
-              />
-            </div>
-          ))}
+          {cards.map((card, index) => {
+            // Normalize the profileImage path
+            const imagePath = card.profileImage.startsWith('./')
+              ? card.profileImage.slice(2) // Remove './'
+              : card.profileImage;
+
+            // Display profile image
+            return (
+              <div key={index} className="cell medium-3">
+                <Card
+                  image={`http://localhost:7001/uploads/${imagePath}`} // Construct the image URL
+                  title={card.title}
+                  text={card.description}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Button from "./Button";
 import "./Create-muse.css";
 
 const MainSection = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [links, setLinks] = useState([""]);
   const [images, setImages] = useState([]);
   const [visibility, setVisibility] = useState("private");
@@ -35,7 +38,7 @@ const MainSection = () => {
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
     const newImages = [...images];
-    files.forEach(file => {
+    files.forEach((file) => {
       newImages.push(file);
     });
     setImages(newImages);
@@ -47,13 +50,33 @@ const MainSection = () => {
     setImages(newImages);
   };
 
-  const handleCreate = () => {
-    // Handle create action
-    console.log("Create button clicked");
+  const handleCreate = async () => {
+    // Create a FormData object to send files
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("visibility", visibility);
+    formData.append("profileImage", profileImage);
+    links.forEach((link, index) => {
+      formData.append(`links[${index}]`, link);
+    });
+    images.forEach((image, index) => {
+      formData.append(`images[${index}]`, image);
+    });
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/muse/create`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error("There was an error creating the muse!", error);
+    }
   };
 
   const handleCancel = () => {
-    // Handle cancel action
     console.log("Cancel button clicked");
   };
 
@@ -71,6 +94,8 @@ const MainSection = () => {
               id="title"
               placeholder="Add a title"
               className="form-input"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -81,6 +106,8 @@ const MainSection = () => {
               id="description"
               placeholder="Add a detailed description"
               className="form-input"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="form-group">
