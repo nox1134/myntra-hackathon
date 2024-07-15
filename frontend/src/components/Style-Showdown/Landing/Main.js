@@ -22,44 +22,44 @@ const Main = () => {
   const pastQuizzes = [
     {
       id: 1,
-      title: "Style Showdown",
-      image: "https://via.placeholder.com/300x200?text=Style+Showdown",
+      title: "Which Bollywood Celebrity Is Your Style Twin?",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6IYZ_kTSVQT1VAGqEbecYrN481IrpxwaB-Xg0vSAcAkqgDIJVHWI79RPxQkRAskfQg0&usqp=CAU",
       description:
-        "Discover your ultimate style with our comprehensive quiz. Perfect for finding your fashion direction!",
+        "Take this quiz to discover which Bollywood celebrity shares your fashion sense and style vibes! Explore iconic looks and find your celebrity style match in the world of Indian cinema.",
     },
     {
       id: 2,
-      title: "Fashion Fiesta",
-      image: "https://via.placeholder.com/300x200?text=Fashion+Fiesta",
+      title: "Fashion Fortune Teller: Discover Your Style Destiny!",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1psCgr1noPuYfhrKSOJi2QNuj2900DcvBeg&s",
       description:
-        "Join the fashion fiesta and see how your style compares to others. A fun way to find your fashion flair!",
+        "Peek into your future closet and uncover the fashion trends that define your signature look.",
     },
     {
       id: 3,
-      title: "Trend Tracker",
-      image: "https://via.placeholder.com/300x200?text=Trend+Tracker",
+      title: "Discover Your Bollywood Movie Match!",
+      image: "https://images.mid-day.com/images/images/2023/oct/jabwemetanniv2023_7.jpg",
       description:
-        "Keep up with the latest trends and find out how you measure up with our trend tracker quiz!",
+        "Take this quiz to find out which Bollywood movie perfectly matches your personality and style! Dive into the world of Indian cinema and uncover your cinematic soulmate.",
     },
     {
       id: 4,
-      title: "Style Evolution",
-      image: "https://via.placeholder.com/300x200?text=Style+Evolution",
+      title: "Which Fashion Season Are You?",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlb84pWAwAdF17wqJcH-izbuuAN_TE7IACwqd3cgzQmnH9h7bwAxmeygnGTwEJPCf9Fh0&usqp=CAU",
       description:
-        "Track your style evolution over time with our engaging quiz!",
+        "Explore your wardrobe personality and uncover whether you embody the vibrant hues of summer, the cozy layers of autumn, the crisp styles of winter, or the fresh blooms of spring.",
     },
     {
       id: 5,
-      title: "Fashion Fusion",
-      image: "https://via.placeholder.com/300x200?text=Fashion+Fusion",
+      title: "Style Alchemist: Transform Your Fashion Elements!",
+      image: "https://i98fm.com.au/images/sized/media/news/potions_bar-700x350.jpg",
       description:
-        "Fuse different fashion elements and discover your unique style with our quiz!",
+        "Mix and match your fashion elements to uncover the alchemical blend that creates your signature style magic."
     },
     {
       id: 6,
-      title: "Trendsetter's Quiz",
-      image: "https://via.placeholder.com/300x200?text=Trendsetter's+Quiz",
-      description: "Find out if you're a trendsetter with our exciting quiz!",
+      title: "What's Your Fashion Aura?",
+      image: "https://t4.ftcdn.net/jpg/05/51/96/35/360_F_551963598_53hrJ2UXDoC00XhkqJ8lKN8Xa2EQg4no.jpg",
+      description: "Explore the colors of your fashion aura and discover the style vibes that define your wardrobe palette.",
     },
   ];
 
@@ -127,19 +127,7 @@ const Main = () => {
                     <button className="card-button">View Details</button>
                   </div>
                 ))}
-                {/* Duplicate content for infinite scroll */}
-                {pastQuizzes.map((quiz) => (
-                  <div key={`duplicate-${quiz.id}`} className="card">
-                    <img
-                      src={quiz.image}
-                      alt={quiz.title}
-                      className="card-image"
-                    />
-                    <h3 className="card-title">{quiz.title}</h3>
-                    <p className="card-description">{quiz.description}</p>
-                    <button className="card-button">View Details</button>
-                  </div>
-                ))}
+
               </div>
             </div>
           </div>

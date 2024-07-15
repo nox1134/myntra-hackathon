@@ -66,24 +66,30 @@
 }
 
 .card-title {
-  font-size: 20px; /* Adjust title font size */
+  font-size: 17px; /* Adjust title font size */
   color: #6b21a8;
   font-weight: bold; /* Ensure title is bold */
   margin-bottom: 10px; /* Add margin below title */
+  overflow: hidden; /* Hide overflow beyond card boundaries */
+  text-overflow: ellipsis; /* Add ellipsis for text overflow */
+  white-space: normal; /* Allow text to wrap */
+  max-height: 4em; /* Limit the title to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit the title to 3 lines */
+  -webkit-box-orient: vertical;
 }
+
 
 .card-description {
   color: #4b5563;
-  font-size: 16px; /* Adjust font size as needed */
-  margin-bottom: 20px;
-  line-height: 1.5; /* Adjust line height for readability */
-  overflow-wrap: break-word; /* Ensure long words break to next line */
-  word-break: break-word; /* Ensure words break properly */
-  hyphens: auto; /* Enable hyphenation where supported */
-  max-height: 150px; /* Limit maximum height of description */
-  overflow: hidden; /* Hide overflow beyond max height */
+  font-size: 12px; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Add margin below title */
+  overflow: hidden; /* Hide overflow beyond card boundaries */
+  text-overflow: ellipsis; /* Add ellipsis for text overflow */
+  white-space: normal; /* Allow text to wrap */
+  max-height: 5em; /* Limit the title to 3 lines */
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3; /* Limit the title to 3 lines */
   -webkit-box-orient: vertical;
 }
 
