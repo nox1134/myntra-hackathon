@@ -14,10 +14,10 @@
 - dotenv: For managing environment variables.
 
 #### Additional Tools & Libraries
-Cors: Middleware for enabling CORS (Cross-Origin Resource Sharing).
-Path: Node.js module for handling file and directory paths.
-Nodemon: For automatically restarting the server during development.
-Puppeteer: For web scraping myntra site
+- Cors: Middleware for enabling CORS (Cross-Origin Resource Sharing).
+- Path: Node.js module for handling file and directory paths.
+- Nodemon: For automatically restarting the server during development.
+- Puppeteer: For web scraping myntra site
 
 ### PPT: https://docs.google.com/presentation/d/1biuuphRgE7i9iysaeBT9QfGdsQBiaqLLdP2TuRh1wLY/edit#slide=id.g2e8ad979e09_0_6
 
