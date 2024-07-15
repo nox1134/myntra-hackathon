@@ -10,12 +10,22 @@ import './Results.css';
 
 const Results = () => {
   const [outcome, setOutcome] = useState('');
+  const [products, setProducts] = useState([]);
+  const [outcomeUrl, setOutcomeUrl] = useState('');
 
   useEffect(() => {
     const fetchOutcome = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/response/latest`);
-        setOutcome(response.data.outcome);
+        const out=response.data.outcome;
+        if(!out){
+            console.error('Error fetching outcome');
+        }
+        const outcomeName=encodeURIComponent(out);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/outcome/${outcomeName}`);
+        setOutcome(res.data.outcome);
+        setProducts(res.data.products); 
+        setOutcomeUrl(res.data.url);
       } catch (error) {
         console.error('Error fetching outcome:', error);
       }
@@ -37,8 +47,8 @@ const Results = () => {
           description="This is the description of the card. It can be a bit longer to provide more information."
         />
       </div>
-      <ProductsSection />
-      <ShopButton />
+      <ProductsSection products={products} /> 
+      <ShopButton url={outcomeUrl} />
     </div>
   );
 };
