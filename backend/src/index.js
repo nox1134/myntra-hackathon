@@ -8,7 +8,7 @@ const OutcomeRoutes = require('./routes/OutcomeRoutes');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 7001;
 const frontend = process.env.FRONTEND_URL || 'http://localhost:3000';
 app.use(cors({ origin: frontend }));
 app.use(express.json());

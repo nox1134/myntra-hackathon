@@ -43,29 +43,6 @@ h1 {
   text-align: center;
 }
 
-.dark-mode {
-  all: unset;
-  display: inline-flex;
-  column-gap: 0.625rem;
-  padding: 0.625rem 1.875rem;
-  border: 1px solid #555;
-  border-radius: 6.25rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-  transition: all 0.35s ease;
-}
-.dark-mode:hover {
-  background: #555;
-  color: #fff;
-}
-.theme-dark .dark-mode {
-  border-color: #fff;
-}
-.theme-dark .dark-mode:hover {
-  background: #fff;
-  color: #2c3333;
-}
-
 .card {
   position: relative;
   display: flex;
@@ -78,9 +55,6 @@ h1 {
   transition: box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-decoration: none;
   z-index: 0;
-}
-.theme-dark .card {
-  background: #222831;
 }
 .card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -152,9 +126,6 @@ h1 {
   text-align: center;
   z-index: 1;
 }
-.theme-dark .card__title {
-  color: #fff;
-}
 .card__content {
   display: flex;
   flex-direction: column;
@@ -171,9 +142,6 @@ h1 {
   color: #555;
   font-size: 0.875rem;
   text-align: center;
-}
-.theme-dark .card__content p {
-  color: #fff;
 }
 .card__content span {
   display: flex;

@@ -4,7 +4,7 @@
 
 body {
   font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
-  background: linear-gradient(45deg, rgba(241, 58, 177, 0.15), rgba(231, 39, 68, 0.15), rgba(253, 145, 60, 0.15), rgba(240, 85, 36, 0.15), rgba(59, 77, 113, 0.15));
+  background: linear-gradient(45deg, rgba(241, 58, 177, 0.2), rgba(231, 39, 68, 0.2), rgba(253, 145, 60, 0.2), rgba(240, 85, 36, 0.2), rgba(59, 77, 113, 0.2));
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
   margin: 0;
