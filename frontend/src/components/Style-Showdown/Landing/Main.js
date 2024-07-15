@@ -7,10 +7,14 @@ const Main = () => {
 
   const handleScroll = () => {
     if (bottomDivRef.current) {
-      bottomDivRef.current.scrollIntoView({ behavior: "smooth" });
+      const scrollOffset = -50; // Adjust this offset as needed
+      const targetPosition = bottomDivRef.current.offsetTop + scrollOffset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
     }
   };
-
   const handleClick = () => {
     navigate("/quiz-page");
   };

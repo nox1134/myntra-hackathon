@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   const handleArrowClick = () => {
-    window.location.href = '/desiredPage'; // Replace '/desiredPage' with your desired page URL
+    window.location.href = '/explore'; // Replace '/desiredPage' with your desired page URL
   };
 
   return (

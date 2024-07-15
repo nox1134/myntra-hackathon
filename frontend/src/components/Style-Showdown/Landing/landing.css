@@ -45,50 +45,59 @@
 }
 .card {
   flex-shrink: 0;
-  width: 300px; /* Adjust width as needed */
-  margin-right: 20px; /* Spacing between cards */
-  background-color: white;
-  padding: 16px;
+  width: 300px; /* Adjust card width as needed */
+  margin-right: 20px;
+  background-color: #ffffff; /* Ensure background color is consistent */
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb; /* Add border for separation */
   transition: transform 0.3s;
-  height: auto; /* Ensure height adjusts based on content */
+  height: auto;
+  margin-bottom: 20px; /* Add margin between cards */
 }
 
 .card-image {
-  width: 100%;
-  height: 200px; /* Maintain card height */
+  width: 100%; /* Ensure image fills card width */
+  height: auto; /* Maintain aspect ratio */
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  border-radius: 8px; /* Add border radius to image */
+  margin-bottom: 10px; /* Add margin below image */
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 20px; /* Adjust title font size */
   color: #6b21a8;
-  margin-bottom: 8px;
+  font-weight: bold; /* Ensure title is bold */
+  margin-bottom: 10px; /* Add margin below title */
 }
 
 .card-description {
   color: #4b5563;
-  font-size: 1rem;
+  font-size: 16px; /* Adjust font size as needed */
   margin-bottom: 20px;
-  text-align: justify;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: none;
-  margin-right: auto;
+  line-height: 1.5; /* Adjust line height for readability */
+  overflow-wrap: break-word; /* Ensure long words break to next line */
+  word-break: break-word; /* Ensure words break properly */
+  hyphens: auto; /* Enable hyphenation where supported */
+  max-height: 150px; /* Limit maximum height of description */
+  overflow: hidden; /* Hide overflow beyond max height */
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .card-button {
-  background: linear-gradient(to right, #7e22ce, #ec4899);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
+  background: linear-gradient(to right, #7e22ce, #ec4899); /* Adjust button background color */
+  color: #ffffff; /* Ensure button text is readable */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Adjust padding inside button */
+  border-radius: 4px; /* Add button border radius */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Add transition for smooth hover effect */
+  width: 100%; /* Ensure button fills card width */
+  text-align: center; /* Center align button text */
+  margin-top: auto; /* Move button to bottom of card */
 }
 
 .card-button:hover {
